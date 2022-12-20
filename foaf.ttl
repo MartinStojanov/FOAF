@@ -1,0 +1,81 @@
+EasyRdf
+Documentation
+Examples
+Converter
+Support
+Downloads
+Converter
+Input Data:
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:admin="http://webns.net/mvcb/"
+      xml:base="https://raw.githubusercontent.com/MartinStojanov/FOAF/main/foaf.ttl#">
+<foaf:PersonalProfileDocument rdf:about="">
+  <foaf:maker rdf:resource="#me"/>
+  <foaf:primaryTopic rdf:resource="#me"/>
+  <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
+  <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
+</foaf:PersonalProfileDocument>
+<foaf:Person rdf:ID="me">
+<foaf:name>Martin Stojanov</foaf:name>
+<foaf:title>Dr</foaf:title>
+<foaf:givenname>Martin</foaf:givenname>
+<foaf:family_name>Stojanov</foaf:family_name>
+<foaf:nick>Martinco</foaf:nick>
+<foaf:mbox_sha1sum>fd9517c08aa72d0d7a1fbb56acc650babfbbc2ce</foaf:mbox_sha1sum>
+<foaf:phone rdf:resource="tel:071234567"/>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>Huma</foaf:name>
+<foaf:mbox_sha1sum>0e547dd26913d1716c3dd0d0cb917ae5d0bada0a</foaf:mbox_sha1sum>
+<rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/HumaSejdini/FOAF/main/foaf.ttl?fbclid=IwAR1FaiZq-CJ3TJL-kaCqyCRvIOPeWhPm2M1s8j0oNQWgjyujml5rZcc2ykM"/></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>Donika</foaf:name>
+<foaf:mbox_sha1sum>c52c8e0ad8faec5932cae6cb8f91f1df4f3df01c</foaf:mbox_sha1sum>
+<rdfs:seeAlso rdf:resource="https://raw.githubusercontent.com/DonikaSulejmani/FOAF/main/foaf.ttl?fbclid=IwAR2n68TLYhl9CP-YqwQhRInI1ji2UeYWghqupGNndFwhtvJWb00-e3MiGO4"/></foaf:Person></foaf:knows></foaf:Person>
+</rdf:RDF>
+or URI:
+http://njh.me/
+(This URI is also used as the Base URI, when text is put in the input data box)
+Input Format:
+Guess
+Output Format:
+Turtle Terse RDF Triple Language
+Raw output
+ 
+Output
+Number of triples parsed: 23
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns0: <http://webns.net/mvcb/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://raw.githubusercontent.com/MartinStojanov/FOAF/main/foaf.ttl>
+  a foaf:PersonalProfileDocument ;
+  foaf:maker <https://raw.githubusercontent.com/MartinStojanov/FOAF/main/foaf.ttl#me> ;
+  foaf:primaryTopic <https://raw.githubusercontent.com/MartinStojanov/FOAF/main/foaf.ttl#me> ;
+  ns0:generatorAgent <http://www.ldodds.com/foaf/foaf-a-matic> ;
+  ns0:errorReportsTo <mailto:leigh@ldodds.com> .
+
+<https://raw.githubusercontent.com/MartinStojanov/FOAF/main/foaf.ttl#me>
+  a foaf:Person ;
+  foaf:name "Martin Stojanov" ;
+  foaf:title "Dr" ;
+  foaf:givenname "Martin" ;
+  foaf:family_name "Stojanov" ;
+  foaf:nick "Martinco" ;
+  foaf:mbox_sha1sum "fd9517c08aa72d0d7a1fbb56acc650babfbbc2ce" ;
+  foaf:phone <tel:071234567> ;
+  foaf:knows [
+    a foaf:Person ;
+    foaf:name "Huma" ;
+    foaf:mbox_sha1sum "0e547dd26913d1716c3dd0d0cb917ae5d0bada0a" ;
+    rdfs:seeAlso <https://raw.githubusercontent.com/HumaSejdini/FOAF/main/foaf.ttl?fbclid=IwAR1FaiZq-CJ3TJL-kaCqyCRvIOPeWhPm2M1s8j0oNQWgjyujml5rZcc2ykM>
+  ], [
+    a foaf:Person ;
+    foaf:name "Donika" ;
+    foaf:mbox_sha1sum "c52c8e0ad8faec5932cae6cb8f91f1df4f3df01c" ;
+    rdfs:seeAlso <https://raw.githubusercontent.com/DonikaSulejmani/FOAF/main/foaf.ttl?fbclid=IwAR2n68TLYhl9CP-YqwQhRInI1ji2UeYWghqupGNndFwhtvJWb00-e3MiGO4>
+  ] .
